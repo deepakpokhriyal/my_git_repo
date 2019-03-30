@@ -1,9 +1,7 @@
 FROM ubuntu
 MAINTAINER Deepak
-RUN apt-get update && apt-get install  nginx -y
+RUN apt-get update && apt-get install apache2 -y
+ADD index.html /usr/local/apache2/htdocs/index.html
 
-ADD index.html /usr/share/ngnix/html/index.html
-
-ENTRYPOINT [“usr/sbin/nginx”, “-g”, “demon off;”]
 EXPOSE 80
 
